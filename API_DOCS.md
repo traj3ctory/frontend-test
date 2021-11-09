@@ -2,6 +2,8 @@
 
 ## Resources
 
+Uses the library: https://github.com/typicode/json-server
+
 - Profile
 
 ## products routes
