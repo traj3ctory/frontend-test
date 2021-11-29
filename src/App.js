@@ -8,6 +8,7 @@ function App() {
       <Layout>
         <Product />
       </Layout>
+      {/* App.js containing layout and product component */}
     </>
   );
 }

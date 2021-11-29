@@ -2,6 +2,7 @@ import axios from "axios";
 
 const url = process.env.REACT_APP_LOCAL_URL_API;
 
+// Get all products
 const getProducts = async () => {
   try {
     const resp = await axios.get(url);
@@ -9,15 +10,14 @@ const getProducts = async () => {
       return resp.data;
     }
   } catch (error) {
-    // throw new Error("Something went wrong!");
     console.log(error);
   }
 };
 
-// const getProductByTag = async (filter, pageLimit = 5) => {
+// Get product by tag
 const getProductByTag = async (filter) => {
   try {
-    // const resp = await axios.get(`${url}?tag=${filter}`);
+    // tweak the query to search an array of tags
     const tagArray = [];
     const resp = await axios.get(url);
     if (resp.data) {
@@ -35,7 +35,7 @@ const getProductByTag = async (filter) => {
   }
 };
 
-// const getProductByPrice = async (filter, pageLimit = 1) => {
+// Get product by price
 const getProductByPrice = async (filter) => {
   try {
     const resp = await axios.get(`${url}?price=${filter}`);
@@ -47,7 +47,7 @@ const getProductByPrice = async (filter) => {
   }
 };
 
-// const getProductBySub = async (filter, pageLimit = 4) => {
+// Get product by subscription type
 const getProductBySub = async (filter) => {
   try {
     const resp = await axios.get(`${url}?subscription=${filter}`);

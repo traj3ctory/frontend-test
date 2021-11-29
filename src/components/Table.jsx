@@ -3,23 +3,7 @@ import { useState, useEffect } from 'react';
 import { BsBagCheckFill, BsBagXFill } from 'react-icons/bs';
 
 const Table = ({ body }) => {
-    // const [columns, setColumns] = useState([]);
     const [data, setData] = useState([]);
-
-
-    // const makeHeader = (headers) => {
-    //     let headerArray = [];
-    //     let headerFormat = {};
-    //     headers.forEach(el => {
-    //         headerFormat = {
-    //             name: el,
-    //             selector: row => row.el,
-    //             sortable: true,
-    //         }
-    //         headerArray.push(headerFormat);
-    //     });
-    //     setColumns(headerArray);
-    // }
 
     const columns = [
         {
@@ -108,23 +92,23 @@ const Table = ({ body }) => {
     ];
 
     useEffect(() => {
-        // const header = body[0] ? Object.keys(body[0]).map(key => key) : [];
-        // makeHeader(header);
         setData(body);
 
     }, [body])
 
     return (
-        <DataTable
-            fixedHeader
-            fixedHeaderScrollHeight="60vh"
-            title="Products"
-            columns={columns}
-            data={data}
-            pagination
-            paginationRowsPerPageOptions={[5, 10, 20]}
-            paginationPerPage={8}
-        />
+        <section title="productTable">
+            <DataTable
+                fixedHeader
+                fixedHeaderScrollHeight="60vh"
+                title="Products"
+                columns={columns}
+                data={data}
+                pagination
+                paginationRowsPerPageOptions={[5, 10, 20]}
+                paginationPerPage={8}
+            />
+        </section>
     );
 };
 export default Table;
